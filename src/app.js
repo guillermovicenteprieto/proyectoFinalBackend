@@ -16,14 +16,9 @@ import routeProduct from "./routes/routeProduct.js";
 import routeCart from "./routes/routeCart.js";
 import routeChat from "./routes/routeChat.js";
 import cors from 'cors';
-
 import { createRoles } from "./utils/initialSetup.js";
 import authRouter from "./routes/auth.routes.js";
-import userRoute from "./routes/user.routes.js";
-
-
 const app = express();
-
 createRoles();
 /*============================[Middlewares]============================*/
 app.use(express.json());
@@ -69,7 +64,6 @@ app.use("/", routerInfo);
 app.use("/", routeUser);
 app.use("/api", routeProduct);
 app.use("/api", routeCart);
-
 app.use("/api/auth", authRouter);
 /*============================[Rutas Chat]============================*/
 app.use(express.static("public"));

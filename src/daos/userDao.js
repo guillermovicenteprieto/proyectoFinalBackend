@@ -88,7 +88,7 @@ class userDao {
 
   async getUserByUsername(username) {
     try {
-      //logger.info(`Se registra petición GET /users/username/${username}`);
+      logger.info(`Se registra petición GET /users/username/${username}`);
       const user = await User.findOne({ username: username });
       logger.info(`Se obtiene user`);
       return user;
