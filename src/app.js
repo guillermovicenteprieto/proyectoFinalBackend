@@ -14,11 +14,13 @@ import routerInfo from "./routes/routeInfo.js";
 import routeUser from "./routes/routeUser.js";
 import routeProduct from "./routes/routeProduct.js";
 import routeCart from "./routes/routeCart.js";
+import routeChat from "./routes/routeChat.js";
 import cors from 'cors';
+
 import { createRoles } from "./utils/initialSetup.js";
 import authRouter from "./routes/auth.routes.js";
 import userRoute from "./routes/user.routes.js";
-import axios from "axios";
+
 
 const app = express();
 
@@ -67,9 +69,12 @@ app.use("/", routerInfo);
 app.use("/", routeUser);
 app.use("/api", routeProduct);
 app.use("/api", routeCart);
-//app.use("/api/auth", authRouter);
-// app.use("/api/users", userRoute);
-//app.use("/", userRoute);
+
+app.use("/api/auth", authRouter);
+/*============================[Rutas Chat]============================*/
+app.use(express.static("public"));
+app.use("/chat", express.static("public"));
+app.use("/chats", routeChat);
 
 /*======================[Demás rutas indefinidas]======================*/
 app.get("*", (req, res) => {

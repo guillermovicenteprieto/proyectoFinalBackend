@@ -4,14 +4,14 @@ import allProducts from "../utils/listProductsOnDB.js";
 const listProductsOnDB = allProducts;
 import sharp from "sharp";
 import fs from "fs";
-let instance= null;
+let instance = null;
 
 class userController {
   static getInstance() {
-    if(!instance) {
-        instance = new userController()
+    if (!instance) {
+      instance = new userController();
     }
-    return instance
+    return instance;
   }
 
   async getHome(req, res) {
@@ -68,7 +68,7 @@ class userController {
       throw err;
     }
   }
-  
+
   async loginPost(req, res) {
     try {
       logger.info(`Se registra petición POST /login`);
@@ -219,8 +219,15 @@ class userController {
     }
   }
 
-  async createUser (req, res){
-    res.json("usuario creado")
+  async createUser(req, res) {
+    try {
+      logger.info(`Se registra petición POST /users`);
+      const user = await userService.createUser(req.body);
+      res.json({ message: "Usuario creado" });
+    } catch (error) {
+      logger.error(error);
+      res.json({ message: "Error al crear usuario" });
+    }
   }
 }
 

@@ -8,17 +8,3 @@ authRouter.post('/login', authController.login);
 authRouter.post('/signup', [checkifUserExist, checkIfRoleExist], authController.signup);
 
 export default authRouter;
-
-/*
-routeUser.post(
-  "/login",
-  passport.authenticate("login", { failureRedirect: "/login-error" }),
-  userController.loginPost
-);
-routeUser.post(
-  "/registro",
-  upload.single("image"),
-  passport.authenticate("signup", { failureRedirect: "/registro-error" }),
-  userController.registroPost
-);
-*/

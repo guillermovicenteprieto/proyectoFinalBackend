@@ -1,10 +1,9 @@
 import logger from "../utils/loggers.js";
-import { User } from "../models/User.js";
+import  User  from "../models/User.js";
 import userDto from "../dtos/userDto.js";
 let instance = null;
 class userDao {
   constructor() {
-    // this.listUsers = [];
     this.listUsers = userDto;
   }
   static getInstance() {
@@ -38,22 +37,11 @@ class userDao {
     }
   }
 
-  // async createUser(user) {
-  //   try {
-  //     logger.info(`Se registra petición POST /users`);
-  //     const userCreado = await User.create(user);
-  //     logger.info(`Se crea user`);
-  //     return userCreado;
-  //   } catch (err) {
-  //     logger.error(`Error al crear user`);
-  //     throw err;
-  //   }
-  // }
-
   async createUser(user) {
     try {
       logger.info(`Se registra petición POST /users`);
-      const userCreado = await User.create(user);
+      const userCreado = await User.create({user: user});
+
       logger.info(`Se crea user`);
       return userCreado;
     } catch (err) {

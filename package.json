@@ -48,11 +48,9 @@
     "nodemailer": "^6.7.6",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
-    "pm2": "^5.2.0",
     "sequelize": "^6.21.3",
     "sharp": "^0.30.7",
     "socket.io": "^4.5.1",
-    "sqlite3": "^5.0.9",
     "twilio": "^3.78.0"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 import passport from "passport";
 import { Strategy } from "passport-local";
 import { isValidPassword, createHash } from "./validate.js";
-import { User } from "../models/User.js";
+import  User  from "../models/User.js";
 import sharp from "sharp";
 import fs from "fs";
 

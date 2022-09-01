@@ -1,6 +1,7 @@
 import { guardarChat, deleteChat, getChat, updateChat } from "./socket.js";
 
 const chatsList = document.querySelector("#chats");
+
 const email = document.querySelector("#email");
 const message = document.querySelector("#message");
 let savedId = "";

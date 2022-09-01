@@ -10,26 +10,6 @@
 			"name": "ruta_productos",
 			"item": [
 				{
-					"name": "http://localhost:8080/api/productos",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/productos",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"productos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "http://localhost:8080/api/productos/:id",
 					"request": {
 						"method": "GET",
@@ -53,11 +33,37 @@
 				{
 					"name": "http://localhost:8080/api/productos",
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/productos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGQzOTEzNWI0Y2JkMjE3NTI0MTVmYiIsImlhdCI6MTY2MTgxMDk2MywiZXhwIjoxNjYxODk3MzYzfQ.l_Dy59gjYDbC7KDwx98g8LasFYu8TXnv7LvVN1QBZe8",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Producto #1005\",\r\n    \"price\": 8880,\r\n    \"stock\": 100,\r\n    \"description\": \"Descripción de Producto #1005\",\r\n    \"image\": \"https://rotoruabike.com/27453-tm_thickbox_default/bicicleta-para-ninos-ramones-14-lagoon-2021.jpg\",\r\n    \"code\": \"0500\",\r\n    \"category\": \"bicicletas\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Producto AUTH 2\",\r\n    \"price\": 333,\r\n    \"stock\": 100,\r\n    \"description\": \"Descripción de Producto #00000AUTH\",\r\n    \"image\": \"https://rotoruabike.com/27453-tm_thickbox_default/bicicleta-para-ninos-ramones-14-lagoon-2021.jpg\",\r\n    \"code\": \"0555\",\r\n    \"category\": \"bicicletas\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -80,13 +86,19 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/productos/:id",
+					"name": "http://localhost:8080/api/productos Copy",
 					"request": {
-						"method": "PUT",
-						"header": [],
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGQzOTEzNWI0Y2JkMjE3NTI0MTVmYiIsImlhdCI6MTY2MTgxMDk2MywiZXhwIjoxNjYxODk3MzYzfQ.l_Dy59gjYDbC7KDwx98g8LasFYu8TXnv7LvVN1QBZe8",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Producto Actualizado #UPDATED\",\r\n    \"price\": 1500,\r\n    \"stock\": 500,\r\n    \"description\": \"description para producto actualizado #UPDATED\",\r\n    \"image\": \"https://via.placeholder.com/200\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Producto AUTH 2\",\r\n    \"price\": 333,\r\n    \"stock\": 100,\r\n    \"description\": \"Descripción de Producto #00000AUTH\",\r\n    \"image\": \"https://rotoruabike.com/27453-tm_thickbox_default/bicicleta-para-ninos-ramones-14-lagoon-2021.jpg\",\r\n    \"code\": \"0555\",\r\n    \"category\": \"bicicletas\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,7 +106,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/productos/62c76b06180773b45c1af9f9",
+							"raw": "http://localhost:8080/api/productos/62cc9b10f212fc2f674f0c82/image",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -103,7 +115,44 @@
 							"path": [
 								"api",
 								"productos",
-								"62c76b06180773b45c1af9f9"
+								"62cc9b10f212fc2f674f0c82",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/productos/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGU5ZWY2NTZmNmFjZThiOTgzNmJjZCIsImlhdCI6MTY2MTkwMjU4MywiZXhwIjoxNjYxOTg4OTgzfQ.1thSi0sNCAX0FXEhooIhTTwL4gpTEsP_RtHm83pYbDA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"price\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/62cc9b10f212fc2f674f0c82",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"62cc9b10f212fc2f674f0c82"
 							]
 						}
 					},
@@ -113,9 +162,15 @@
 					"name": "http://localhost:8080/api/:id",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGQzOTEzNWI0Y2JkMjE3NTI0MTVmYiIsImlhdCI6MTY2MTgxMDk2MywiZXhwIjoxNjYxODk3MzYzfQ.l_Dy59gjYDbC7KDwx98g8LasFYu8TXnv7LvVN1QBZe8",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:8080/api/productos/62fec118e0b2a6f7f74fd31b",
+							"raw": "http://localhost:8080/api/productos/630e85224e2f15568ab2b110",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -124,7 +179,7 @@
 							"path": [
 								"api",
 								"productos",
-								"62fec118e0b2a6f7f74fd31b"
+								"630e85224e2f15568ab2b110"
 							]
 						}
 					},
@@ -136,18 +191,19 @@
 			"name": "ruta_users",
 			"item": [
 				{
-					"name": "http://localhost:8080/users",
+					"name": "http://localhost:8080/api/users",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users",
+							"raw": "http://localhost:8080/api/users",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"users"
 							]
 						}
@@ -155,12 +211,12 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/productos/:id",
+					"name": "http://localhost:8080/api/users/:id",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/productos/62cc9b10f212fc2f674f0c82",
+							"raw": "http://localhost:8080/api/users/62c20bb62fb00120e0907522",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -168,21 +224,35 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"productos",
-								"62cc9b10f212fc2f674f0c82"
+								"users",
+								"62c20bb62fb00120e0907522"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/productos",
+					"name": "http://localhost:8080/api/users/:id/image",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "POST",
-						"header": [],
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDU2ZDdhM2E3MzFkYTZiY2Y0OWVlOCIsImlhdCI6MTY2MTMwMDA5MCwiZXhwIjoxNjYxMzg2NDkwfQ.GxUsJD-oiLiDsiljfgolR_Ymy5sg1_1jx9x_duBHT1Y",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"titulo\":\"news #1\",\r\n    \"cuerpo\":\"lorem10\"\r\n\r\n}",
+							"raw": "{\r\n    \"username\": \"ma\",\r\n    \"email\": \"ma@netma\",\r\n    \"password\": \"123\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -190,27 +260,30 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/noticias",
+							"raw": "http://localhost:8080/api/users/62dcb53bede2461ffa186f33/image",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"noticias"
+								"api",
+								"users",
+								"62dcb53bede2461ffa186f33",
+								"image"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/productos/:id",
+					"name": "http://localhost:8080/api/users/:id",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Producto Actualizado #UPDATED\",\r\n    \"price\": 1500,\r\n    \"stock\": 500,\r\n    \"description\": \"description para producto actualizado #UPDATED\",\r\n    \"image\": \"https://via.placeholder.com/200\"\r\n}",
+							"raw": "{\r\n    \"username\": \"amapo-qwerty\",\r\n    \"email\": \"amapo@ee-qwerty.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -218,7 +291,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/productos/62c76b06180773b45c1af9f9",
+							"raw": "http://localhost:8080/api/users/6300641949de6eaace317231",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -226,28 +299,29 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"productos",
-								"62c76b06180773b45c1af9f9"
+								"users",
+								"6300641949de6eaace317231"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/users/:id",
+					"name": "http://localhost:8080/api/users/:id",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users/62c20bb62fb00120e0907522",
+							"raw": "http://localhost:8080/api/users/630062e08781eff4401ba24d",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"users",
-								"62c20bb62fb00120e0907522"
+								"630062e08781eff4401ba24d"
 							]
 						}
 					},
@@ -264,14 +338,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/carts",
+							"raw": "http://localhost:8080/api/carritos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "8080",
 							"path": [
-								"carts"
+								"api",
+								"carritos"
 							]
 						}
 					},
@@ -468,7 +543,136 @@
 		},
 		{
 			"name": "auth",
-			"item": []
+			"item": [
+				{
+					"name": "http://localhost:8080/api/auth/signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ballenas\",\r\n    \"email\": \"ballenas@net.com\",\r\n    \"password\": \"123\",\r\n    \"roles\":[\r\n        \"admin\"\r\n    ]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"viernes\",\r\n    \"email\": \"viernes@net.com\",\r\n    \"password\": \"123\",\r\n    \"roles\":[\r\n        \"admin\"\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ruta_chats",
+			"item": [
+				{
+					"name": "http://localhost:8080/chats",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tango\",\r\n    \"message\": \"?!\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/chats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/chats",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"qwerty\",\r\n    \"message\": \"hola!\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/chats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"chats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

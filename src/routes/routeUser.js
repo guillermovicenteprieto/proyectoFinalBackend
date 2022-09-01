@@ -28,11 +28,11 @@ routeUser.post(
 );
 
 /*=========================[NUEVAS RUTAS API: /]=========================*/
-routeUser.get("/users", userController.getAllUsers);
-routeUser.get("/users/:id", isAuth, userController.getUserById);
-routeUser.get("/users/:id/image", userController.getUserImage);
-routeUser.delete("/users/:id", userController.deleteUser);
-routeUser.put("/users/:id", isAuth, userController.updateUser);
+routeUser.get("/api/users", userController.getAllUsers);
+routeUser.get("/api/users/:id", userController.getUserById);
+routeUser.get("/api/users/:id/image", userController.getUserImage);
+routeUser.put("/api/users/:id", userController.updateUser);
+routeUser.delete("/api/users/:id", userController.deleteUser);
 
 
 export default routeUser;

@@ -1,15 +1,24 @@
-import {User} from "../models/User.js";
+import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import Role from "../models/Role.js";
 
 export const signup = async (req, res) => {
   try {
     const { username, email, password, roles } = req.body;
-    const user = new User({
-      username,
-      email,
-      password: await User.encryptPassword(password),
-    });
+    console.log(username
+      , email
+      , password
+      , roles
+      );
+      const user = new User({
+        username,
+        email,
+        password,
+        roles
+        });
+        console.log("SAHD");
+      //const user = new User (username, email, password, roles);
+    console.log(user);
     if (roles) {
       const role = await Role.find({ name: { $in: roles } });
       user.roles = role.map((role) => role._id);

@@ -1,14 +1,20 @@
 import { ROLES } from "../models/Role.js";
-import {User} from "../models/User.js";
+import User from "../models/User.js";
 
 export const checkifUserExist = async (req, res, next) => {
-  const user = await User.findOne({ username: req.body.username });
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    
+
   if (user) return res.status(400).json({ message: "El usuario ya existe" });
 
   const email = await User.findOne({ email: req.body.email });
   if (email) return res.status(400).json({ message: "El email ya existe" });
 
   next();
+} catch (error) {
+  res.status(500).json({ message: error.message });
+}
 };
 
 export const checkIfRoleExist = (req, res, next) => {

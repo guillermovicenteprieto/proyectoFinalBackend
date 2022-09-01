@@ -8,7 +8,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import { Cart } from "../models/Cart.js";
 import { Product } from "../models/Product.js";
-import { User } from "../models/User.js";
+import  User  from "../models/User.js";
 import sendSMS from "../utils/messageSMS.js";
 import sendMail from "../utils/messageEmailEthereal.js";
 import sendEmailGoogle from "../utils/messageEmailGoogle.js";

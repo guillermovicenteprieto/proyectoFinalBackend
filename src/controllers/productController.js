@@ -1,5 +1,7 @@
 import logger from "../utils/loggers.js";
 import productService from "../services/productService.js";
+import sharp from "sharp";
+import fs from "fs";
 let instance= null;
 
 class productController {
@@ -61,6 +63,19 @@ class productController {
       res.status(200).json({ productoActualizado });
     } catch (err) {
       logger.error(`Error al actualizar producto`);
+      throw err;
+    }
+  }
+
+  async addImage(req, res){
+    try {
+      const image = req.file;
+      const processImage = sharp(image.buffer);
+      const data = await processImage.resize(200, 200).toBuffer();
+      fs.writeFileSync(`avatar/products/${req.user.image}`, data);
+      res.redirect("/api/productos"); 
+    } catch (err) {
+      logger.error(`Error al obtener user`);
       throw err;
     }
   }
