@@ -47,3 +47,25 @@
 | DELETE | **/api/carritos/:id/productos/idProduto** | Elimina un producto del carrito según su id
 
 | GET | **/api/carritos/compra/:id/user/idUser** | Finaliza la compra de un carrito según su id y el id del usuario y envia un correo con los datos de la compra, además de un sms y un mensaje vía WhatsApp.
+
+
+| POST | **http://localhost:8080/api/auth/signup** | Permite registrarse y autenticarse como administrador
+
+| POST | **http://localhost:8080/api/auth/login** | Permite ingresar el usuario autenticado
+
+
+| POST | **http://localhost:8080/chats** | Permite ingresar un mensaje al chat que quedará guardado en la base de datos.
+
+| GET | **http://localhost:8080/chats** | Permite obtener los mensajes de chat de la base de datos.
+
+
+
+| GET | **http://localhost:8080/api/users** | Permite obtener los usuarios de la base de datos.
+
+| GET | **http://localhost:8080/api/users/:id** | Permite obtener usuario por id.
+
+| GET | **http://localhost:8080/api/users/:id/image** | Permite obtener el avatar del usuario.
+
+| PUT | **http://localhost:8080/api/users/:id** | Permite editar al usuario.
+
+| DEL | **http://localhost:8080/api/users/:id** | Permite eliminar registro de usuario.
