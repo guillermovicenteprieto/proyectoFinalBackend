@@ -20,6 +20,13 @@ import { createRoles } from "./utils/initialSetup.js";
 import authRouter from "./routes/auth.routes.js";
 const app = express();
 createRoles();
+
+
+/*==========================[GraphQl]==========================*/
+import { graphqlHTTP } from "express-graphql";
+import  squemaGraphQL  from "./graphql/index.js";
+
+
 /*============================[Middlewares]============================*/
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -69,6 +76,13 @@ app.use("/api/auth", authRouter);
 app.use(express.static("public"));
 app.use("/chat", express.static("public"));
 app.use("/chats", routeChat);
+
+/*==========================[GraphQl]==========================*/
+
+app.use('/graphql', graphqlHTTP({
+  schema: squemaGraphQL,
+  graphiql: true
+  }));
 
 /*======================[Demás rutas indefinidas]======================*/
 app.get("*", (req, res) => {

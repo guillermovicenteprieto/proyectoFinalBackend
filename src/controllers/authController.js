@@ -16,8 +16,6 @@ export const signup = async (req, res) => {
         password,
         roles
         });
-        console.log("SAHD");
-      //const user = new User (username, email, password, roles);
     console.log(user);
     if (roles) {
       const role = await Role.find({ name: { $in: roles } });
